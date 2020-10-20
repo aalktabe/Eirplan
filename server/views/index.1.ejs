@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, 
+        initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!-- <link rel="shortcut icon" href="#"> -->
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+        <style>
+        img {
+            width : 100%;
+            height: 100%;
+        }
+        </style>
+        
+        <title>Back Office</title>
+    </head>
+
+    <body>
+          <div class="col-md-6 m-auto">
+            <h2 class="text-center display-4 my-4"> Eirplan Back Office</h2>
+
+            <!-- <section>
+                <h3> Event Configuration </h3>
+                <h4>Add event logo</h4>
+                <h5> Please choose png or jpeg images</h5>
+                <form action="/post" method="POST" enctype="multipart/form-data">
+                    <div class="custom-file mn-3">
+                        <input type="file" name="file_event_logo" id="file" class="custom-file-input">
+                        <label for="file" class="custom-file-label">Choose File</label>
+                    </div>
+                    <input type="submit" value="Submit" class="btn btn-primary ">
+                </form>
+                <hr>
+                <% if(files){ %>
+                    <% files.forEach(function(file) { %>
+                      <div class="card card-body mb-3">
+                        <% if(file.isImage) { %>
+                          <img src="img/<%= file.filename %>" alt="">
+                          <% } else { %>
+                            <%= file.filename %>
+                              <% } %>
+                              <form method="POST" action="/img/<%= file._id %>?_method=DELETE">
+                                <button class="btn btn-danger  mt-4">Delete</button>
+                              </form>
+                              
+                              <form method="POST" action="/img/<%= file._id %>?_method=DOWNLOAD">
+                                <button class="btn btn-primary mt-4" id="btn_download">Download</button>
+                                 <script type="text/javascript">
+                                  $("#btn_download").click(function(){
+                                      window.open('/download');
+                                  })
+                                  </script> 
+                              </form>
+                    </div>
+                    <% }) %>
+                      <% } else { %>
+                        <p>No files to show</p>
+                        <% } %> 
+            </section>
+
+            <section>
+                <h4>Add host logo</h4>
+
+                <form action="/post" method="POST" enctype="multipart/form-data">
+                  <div class="custom-file mn-3">
+                      <input type="file" name="file_host_logo" id="file" class="custom-file-input">
+                      <label for="file" class="custom-file-label">Choose File</label>
+                  </div>
+                  <input type="submit" value="Submit" class="btn btn-primary ">
+              </form>
+            </section> -->
+
+            <section>
+                
+            <form action="/post" method="POST" enctype="multipart/form-data">
+              <input type="submit" value="Submit" class="btn btn-primary ">
+              <!-- <h3> Event Configuration </h3>
+                <h4>Add event logo</h4>
+                <h5> Please choose png or jpeg images</h5>
+              <div class="custom-file mn-3">
+                  <input type="file" name="file_event_logo" id="file-event" class="custom-file-input">
+                  <label for="file" class="custom-file-label">Choose File</label>
+                  <div id="preview-event"></div>
+
+              </div>
+              <h4>Add host logo</h4>
+              <div class="custom-file mn-3">
+                  <input type="file" name="file_host_logo" id="file-host" class="custom-file-input">
+                  <label for="file" class="custom-file-label">Choose File</label>
+                  <div id="preview-host"></div>
+
+              </div> -->
+              <h3> Plan Configuration </h3>
+              <h4>Add floors</h4>
+              <h5> Please choose svg images</h5>
+                <div class="custom-file mn-3">
+                    <input type="file" name="file_floor" id="file-floor" class="custom-file-input">
+                    <label for="file" class="custom-file-label">Choose File</label>
+                    <div id="preview-floor"></div>
+                </div>
+                
+               
+
+            </form>
+            <hr>
+            <script type="text/javascript">
+            // function previewImages( inputId, previewId) {
+            function previewImages() {
+
+
+              // var preview = document.querySelector(previewId);
+              var preview = document.querySelector('#preview-floor');
+
+              
+              if (this.files) {
+                [].forEach.call(this.files, readAndPreview);
+              }
+            
+              function readAndPreview(file) {
+            
+                // Make sure `file.name` matches our extensions criteria
+                if (!/\.(jpg|jpeg|png|svg|gif)$/i.test(file.name)) {
+                  return alert(file.name + " is not an image");
+                } // else...
+                
+                var reader = new FileReader();
+                
+                reader.addEventListener("load", function() {
+                  var image = new Image();
+                  image.height = 100;
+                  image.title  = file.name;
+                  image.src    = this.result;
+                  preview.appendChild(image);
+                });
+                
+                reader.readAsDataURL(file);
+                
+              }
+            
+            }
+            document.querySelector('#file-floor').addEventListener("change", previewImages);
+
+            
+            // document.querySelector('#file-floor').addEventListener("change", function () {previewImages('#file-floor','#preview-floor');});
+          </script>
+            <!-- <% if(files){ %>
+                <% files.forEach(function(file) { %>
+                  <div class="card card-body mb-3">
+                    <% if(file.isImage) { %>
+                      <img src="image/<%= file.filename %>" alt="">
+                      <% } else { %>
+                        <%= file.filename %>
+                          <% } %>
+                            <form method="POST" action="/image/<%= file._id %>?_method=DELETE">
+                              <button class="btn btn-danger  mt-4">Delete</button>
+                            </form>
+                            
+                            <form method="POST" action="/image/<%= file._id %>?_method=DOWNLOAD">
+                              <button class="btn btn-primary  mt-4" id="btn_download">Download</button>
+                             <script type="text/javascript">
+                                $("#btn_download").click(function(){
+                                    window.open('/download');
+                                })
+                                </script> 
+                            </form>
+                  </div>
+                  <% }) %>
+                    <% } else { %>
+                      <p>No files to show</p>
+                        <% } %> -->
+              </section>
+          
+            </div>
+       
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+    </body>
+</html>

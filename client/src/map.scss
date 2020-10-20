@@ -1,0 +1,157 @@
+// *{
+// 	background: #282c34;
+
+// }
+.App {
+	/* text-align: center; */
+	background: #282c34;
+  
+  }
+  
+  .App-logo {
+	height: 40vmin;
+	pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+	.App-logo {
+	  animation: App-logo-spin infinite 20s linear;
+	}
+  }
+  
+  .App-header {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+  }
+  
+
+  
+  /********************* NavBar ****************************/
+  .NavBaar{
+	position: fixed;
+  }
+  .logo{
+	display: flex;
+	justify-content: space-between center;
+  
+  }
+  .enseirbLogo {
+	height: 150px;
+	width : 200px;
+	margin-left: 30px; 
+	margin-top: 10px;
+  
+  
+  }
+  .txt{
+	margin-left: auto;
+	margin-right: auto;
+	color: aliceblue;
+  }
+  
+  
+  .txt-1{
+   padding-top: 40px;
+   
+  }
+  
+  .txt-2{
+	padding-left: 30px;
+  }
+  
+  .forumLogo {
+	height: 200px;
+	width : 200px;
+	padding-right: 20px; 
+  
+  }
+
+  /* Buttons */
+  .buttons{
+	display: flex;
+	justify-content: flex-end;
+	float: right;
+  }
+
+/* Maps examples */
+.examples {
+	width: 1000px;
+	margin: 0 auto;
+	font-family: Arial, sans-serif;
+	text-align: center;
+
+	&__title {
+		margin-bottom: 80px;
+		padding-bottom: 40px;
+		border-bottom: 1px dotted white;
+		font-size: 24px;
+
+	}
+
+	&__block {
+		margin-bottom: 80px;
+		padding-bottom: 80px;
+		border-bottom: 1px dotted white;
+
+
+		&__title {
+			margin-bottom: 40px;
+			font-size: 20px;
+			color: aliceblue;
+
+		}
+
+		&__info {
+			display: inline-block;
+			vertical-align: top;
+			width: 450px;
+			text-align: left;
+
+			&__item {
+				margin-bottom: 20px;
+				color: aliceblue;
+				
+			}
+		}
+	}
+}
+
+.standInformation{
+	text-align: center;
+	border: 1px dashed #a1d99b;
+}
+
+.svg-map {
+	background: #282c34;
+	width: 100%;
+	height: auto;
+	stroke: #666;
+	stroke-width: 1;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	margin-top: 0;
+
+	&__location {
+		fill: #a1d99b;
+		cursor: pointer;
+
+		&:focus,
+		&:hover {
+			fill: #b8e2b3;
+			outline: 0;
+		}
+
+		&[aria-checked=true] {
+			fill: #f4bc44;
+		}
+	}
+}
+
+#wall {
+    fill: none;
+}

@@ -1,0 +1,172 @@
+
+
+.App {
+  /* text-align: center; */
+  background: #282c34;
+
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/********************* NavBar ****************************/
+.NavBaar{
+  position: fixed;
+}
+.logo{
+  display: flex;
+  justify-content: space-between center;
+
+}
+.enseirbLogo {
+  height: 150px;
+  width : 200px;
+  margin-left: 30px; 
+  margin-top: 10px;
+
+
+}
+.txt{
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+
+.txt-1{
+ padding-top: 40px;
+ 
+}
+
+.txt-2{
+  padding-left: 30px;
+}
+
+.forumLogo {
+  height: 200px;
+  width : 200px;
+  padding-right: 20px; 
+
+}
+
+/*********************** hr **********************/
+
+hr{
+  padding: 0;
+  margin: 0;
+}
+
+/*********************** SVG **********************/
+
+.RDC_SVG , .SS_SOL_SVG , .NV_BAT_SVG{
+  display: flex;
+  justify-content: center;
+}
+
+.rdc{
+  width: 100%;
+  height: 100%;
+}
+
+
+/********************* Buttons ********************/
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+}
+/* 
+path {
+  fill:#00ff6a;
+  fill-opacity:1;
+  stroke:#2346e6;
+  stroke-width:0.5;
+  stroke-opacity:1;
+} */
+
+/* .home__icon:hover g g {
+
+  fill:aqua;
+ } */
+ 
+path {
+  fill:red;
+}
+
+path:hover {
+  fill:aqua;
+}
+desc {
+  color: aliceblue;
+}
+/* .hide {
+  display: none;
+} */
+
+#svg-data{
+  /* display: none; */
+  color: white;
+
+}
+
+#hide{
+  color: white;
+}
+
+/* path:hover desc{
+  display: none;
+  display: block;
+  color: red;
+  background: #ccc;
+} */
+
+/* .hide:hover ~ path {
+  display: block;
+  color: rgb(0, 255, 136);
+  background: #ccc;
+  fill: beige;
+  
+} */
+/* 
+#a:hover ~ #b {
+  background: #ccc
+} */
+
+/* .home__icon path {
+  stroke: #e5e5e5;
+  stroke-width: 0.5;
+ } */
+
+ 

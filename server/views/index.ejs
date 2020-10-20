@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">       
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <style>
+          div.preview-images > img {
+            width: 30%;
+          }
+        </style>
+   
+        <title>Back Office</title>
+    </head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 mt-3">
+        <h2>Eirplan Back Office</h2>
+
+        <section>
+          <h3> Event Configuration </h3>
+          <h4>Add event logo</h4>
+          <h5> Please choose png or jpeg images</h5>
+          <form action="/eventLogo" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="example-input-file"> </label>
+              <input type="file" name="file_event_logo" multiple id="input-event-logo" class="form-control-file border"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </section>
+
+        <section>
+          <h4>Add host logo</h4>
+          <form action="/hostLogo" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="example-input-file"> </label>
+              <input type="file" name="file_host_logo" multiple id="input-host-logo" class="form-control-file border"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </section>
+
+        <section>
+          <h3> Plan Configuration </h3>
+          <h4>Add floors</h4>
+          <h5> Please choose svg images</h5>
+          <form action="/floors" method="POST" enctype="multipart/form-data">
+<!-- 
+            <div class="form-group">
+                <label for="example-input-file"> </label>
+                <input type="file" name="file_event_logo" multiple id="input-event-logo" class="form-control-file border"/>
+            </div>
+
+            <div class="form-group">
+                <label for="example-input-file"> </label>
+                <input type="file" name="file_host_logo" multiple id="input-host-logo" class="form-control-file border"/>
+            </div> -->
+
+            <div class="form-group">
+              <label for="example-input-file"> </label>
+              <input type="file" name="file_floor" multiple id="input-file_floor" class="form-control-file border"/>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </section>
+        <section>
+          <form action="/createEvent" method="POST">
+            <button type="submit" class="btn btn-primary">Create Event</button>
+          </form>
+        </section>
+
+    </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="preview-images"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      let imagesPreview = function(input, placeToInsertImagePreview) {
+        if (input.files) {
+          let filesAmount = input.files.length;
+          for (i = 0; i < filesAmount; i++) {
+            let reader = new FileReader();
+            reader.onload = function(event) {
+              $($.parseHTML("<img>"))
+                .attr("src", event.target.result)
+                .appendTo(placeToInsertImagePreview);
+            };
+            reader.readAsDataURL(input.files[i]);
+          }
+        }
+      };
+      $("#input-file_floor").on("change", function() {
+        imagesPreview(this, "div.preview-images");
+      });
+    });
+  </script>
+</body>
+</html>
+
+</body>
+</html>

@@ -17,7 +17,7 @@ If not just open the link below: http://localhost:3000/
 
 To test the server: open the server in your terminal.
 		    run "node server.js"
-		    go to your borwser and open : localhost:3003
+		    go to your borwser and open : localhost:3008
 # Maps
 The maps used have to be XML/SVG folders. 
 To ensure the right compilation of the code, these SVGs must have one and only one path tag without a description. This path refers actually to a wall. See an example in /docs/SVG/RDC.svg

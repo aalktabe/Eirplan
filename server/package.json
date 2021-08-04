@@ -31,6 +31,6 @@
     "xml-parse-from-string": "^1.0.1",
     "xml-stringify": "^2.0.0",
     "xml2json": "^0.12.0",
-    "xmldom": "^0.3.0"
+    "xmldom": "^0.6.0"
   }
 }
